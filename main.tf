@@ -24,8 +24,8 @@ resource "random_string" "suffix" {
 }
 
 module "vpc" {
-  source  = "terraform-aws-modules/vpc/aws"
-  version = "5.0.0"
+  #source  = "terraform-aws-modules/vpc/aws"
+  #version = "5.0.0"
   source = "git::https://github.com/terraform-aws-modules/terraform-aws-vpc.git?ref=26c38a66f12e7c6c93b6a2ba127ad68981a48671"  # commit hash of version 5.0.0
 
   name = "education-vpc"
@@ -52,8 +52,9 @@ module "vpc" {
 }
 
 module "eks" {
-  source  = "terraform-aws-modules/eks/aws"
-  version = "19.15.3"
+  #source  = "terraform-aws-modules/eks/aws"
+  #version = "19.15.3"
+  source = "git::https://github.com/terraform-aws-modules/terraform-aws-eks.git?ref=0a17f655fb7da00640627ed9255f1d96e42fcfd7” # commit hash of version 19.15.3
 
   cluster_name    = local.cluster_name
   cluster_version = "1.27"
