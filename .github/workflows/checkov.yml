@@ -27,8 +27,6 @@ jobs:
       uses: bridgecrewio/checkov-action@master
       with:
         directory: .
-        # Skip CKV_AZURE_119: "Ensure that Network Interfaces don't use public IPs"
-        # skip_check: CKV_AZURE_119
         enable_secrets_scan_all_files: true
         output_format: cli,sarif
         output_file_path: console,results.sarif
