@@ -30,6 +30,7 @@ jobs:
         enable_secrets_scan_all_files: true
         output_format: cli,sarif
         output_file_path: console,results.sarif
+        download_external_modules: true
         #soft_fail: true
         #api-key: ${{ secrets.BC_API_KEY }}
       #env:
